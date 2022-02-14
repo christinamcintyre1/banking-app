@@ -12,9 +12,10 @@ import CreateAccount from './createaccount.js';
 
 function Spa() {
    return (
+     <NavBar>
+     <Router>
+       
     
-    <Router>
-      <NavBar />
       
      <Routes>
      
@@ -28,8 +29,8 @@ function Spa() {
       {/* </UserContext.Provider> */}
      </Routes>
     </Router>
-      
+      </NavBar >
   );
 }
-ReactDOM.render(<NavBar />, document.getElementById("root"));
+ReactDOM.render(<Spa />, document.getElementById("root"));
 export default Spa;
