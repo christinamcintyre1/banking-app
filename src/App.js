@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+//import Bootstrap from "bootstrap";
+import NavBar from "./navbar.js";
+import Home from "./home.js";
+import Withdraw from "./withdraw.js";
+import Deposit from "./deposit.js";
+import AllData from "./alldata.js";
+import CreateAccount from './createaccount.js';
+//import UserContext from './context.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function Spa() {
+   return (
+    
+    <Router>
+      <NavBar />
+      
+     <Routes>
+     
+      {/* <UserContext.Provider value={{users:[{name: 'Chris', email: 'chris@mit.edu', password: 'secret', balance: 100}]}}> */}
+      <Route path= "/"  element={Home} />
+      <Route path="/withdraw"  element={Withdraw} />
+      <Route path="/deposit/" element={Deposit} />
+      <Route path="/alldata/" element={AllData} />
+      <Route path="createaccount" element={CreateAccount} />
+        
+      {/* </UserContext.Provider> */}
+     </Routes>
+    </Router>
+      
   );
 }
-
-export default App;
+ReactDOM.render(<NavBar />, document.getElementById("root"));
+export default Spa;
