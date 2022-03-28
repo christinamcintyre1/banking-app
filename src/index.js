@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Spa from './App'
 import "./App.css";
- import NavBar from "./navbar.js";
- import bootstrap from "bootstrap";
+// import NavBar from "./navbar.js";
+ //import bootstrap from "bootstrap";
 
 
 ReactDOM.render(
